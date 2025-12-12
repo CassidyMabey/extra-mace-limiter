@@ -1,5 +1,5 @@
 name: ExtraMaceLimiter
-version: 1.0.1
+version: 1.0.2
 main: com.notauthorised.extramacelimiter.ExtraMaceLimiter
 api-version: 1.21
 description: Advanced mace management plugin with configurable limits and storage restrictions

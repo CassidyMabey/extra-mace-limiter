@@ -261,7 +261,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🏷️ Version History
 
-### **v1.0.1** (Latest)
+### **v1.0.2** (Latest)
 - ✅ Full inventory blocking system
 - ✅ Player mace limits with pickup prevention
 - ✅ Hopper and hopper minecart protection

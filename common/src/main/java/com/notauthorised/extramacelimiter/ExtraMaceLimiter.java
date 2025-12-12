@@ -27,6 +27,7 @@ public class ExtraMaceLimiter extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerPickupListener(this), this);
         getServer().getPluginManager().registerEvents(new HopperListener(this), this);
         getServer().getPluginManager().registerEvents(new ItemFrameListener(this), this);
+        getServer().getPluginManager().registerEvents(new DecoratedPotListener(this), this);
         
         ExtraMaceLimiterCommand commandHandler = new ExtraMaceLimiterCommand(this);
         getCommand("extramacelimiter").setExecutor(commandHandler);

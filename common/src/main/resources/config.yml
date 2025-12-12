@@ -60,6 +60,9 @@ blocked-storages:
   
   # Auto crafters 
   crafter: true
+  
+  # Decorated pots
+  decorated-pot: true
 
 
 # Prevent hoppers from picking up maces from the ground

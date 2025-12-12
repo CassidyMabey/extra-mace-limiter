@@ -54,6 +54,14 @@ public class EventUtils {
         if (VersionCompatibility.hasCrafter() && plugin.getConfig().getBoolean("blocked-storages.crafter", true)) {
             blocked.add(InventoryType.CRAFTER);
         }
+        if (plugin.getConfig().getBoolean("blocked-storages.decorated-pot", true)) {
+            blocked.add(InventoryType.DECORATED_POT);
+        }
+        
+        // Debug logging for blocked inventories
+        if (plugin.getConfig().getBoolean("debug", false)) {
+            plugin.getLogger().info("[DEBUG] Blocked inventory types: " + blocked.toString());
+        }
         
         return blocked;
     }

@@ -34,6 +34,13 @@ public class InventoryClickListener implements Listener {
         Inventory inv = event.getInventory();
         Set<InventoryType> blockedInventories = EventUtils.getBlockedInventories(plugin);
 
+        // Debug logging for inventory types
+        if (plugin.getConfig().getBoolean("debug", false)) {
+            player.sendMessage("§7[DEBUG] Inventory click - Type: " + inv.getType() + 
+                             ", Blocked: " + blockedInventories.contains(inv.getType()) + 
+                             ", Holder: " + (inv.getHolder() != null ? inv.getHolder().getClass().getSimpleName() : "null"));
+        }
+
         // check the inventory type
         if (blockedInventories.contains(inv.getType())) {
             boolean shouldBlock = false;
