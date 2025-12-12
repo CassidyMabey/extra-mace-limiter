@@ -1,0 +1,133 @@
+# _____     _              ___  ___                 _     _           _ _            
+#|  ___|   | |             |  \/  |                | |   (_)         (_) |           
+#| |____  _| |_ _ __ __ _  | .  . | __ _  ___ ___  | |    _ _ __ ___  _| |_ ___ _ __ 
+#|  __\ \/ / __| '__/ _` | | |\/| |/ _` |/ __/ _ \ | |   | | '_ ` _ \| | __/ _ \ '__|
+#| |___>  <| |_| | | (_| | | |  | | (_| | (_|  __/ | |___| | | | | | | | ||  __/ |   
+#\____/_/\_\\__|_|  \__,_| \_|  |_/\__,_|\___\___| \_____/_|_| |_| |_|_|\__\___|_|   
+#                                                                                    
+#                                                                                    
+# Extra Mace Limiter Configuration
+# Advanced mace management plugin with configurable limits and storage restrictions
+# Author: notauthorised
+# Discord: https://discord.gg/hBD2psrM6t
+
+
+# Maximum number of special items (maces and custom blocked items) a player can have in their inventory at once
+# Set to -1 for unlimited special items
+# Default: 2 (players can carry up to 2 special items total)
+max-maces-in-inventory: 2
+
+# Prevent players from picking up special items when they have reached the limit
+# true = block pickup when at max special items (recommended)
+# false = allow pickup even at max special items (basically turning this feature off)
+stop-pickup-at-max-maces: true
+
+
+
+# which storage blocks can maces be placed in
+# Set to true to block maces, false to allow maces to be put in it.
+
+blocked-storages:
+  # Regular chests (including chest boats and minecart chests)
+  chest: true
+  
+  # Ender chests
+  ender-chest: true
+  
+  # Barrels 
+  barrel: true
+  
+  # Shulker boxes 
+  shulker-box: true
+  
+  # Hoppers
+  hopper: true
+  
+  # Droppers 
+  dropper: true
+  
+  # Dispensers 
+  dispenser: true
+  
+  # Furnaces 
+  furnace: true
+  
+  # Blast furnaces 
+  blast-furnace: true
+  
+  # Smokers
+  smoker: true
+  
+  # Auto crafters 
+  crafter: true
+
+
+# Prevent hoppers from picking up maces from the ground
+# true = block hopper pickup maces (recommended)
+# false = allow hopper pickup maces
+block-hopper-pickup: true
+
+# Prevent hopper minecarts from picking up maces
+# true = block hopper minecart pickup (recommended)  
+# false = allow hopper minecart pickup
+block-hopper-minecart-pickup: true
+
+# Prevent placing maces in item frames (including glow item frames)
+# true = block item frame placement (recommended)
+# false = allow item frame placement
+block-item-frame-placement: true
+
+# Prevent bundles containing maces from being placed in blocked inventories
+# true = block bundles with maces (recommended)
+# false = allow bundles with maces
+block-bundles-with-maces: true
+
+# =============================================================================
+# ADDITIONAL BLOCKED ITEMS
+# =============================================================================
+# Add other items that should be restricted like maces
+# You can specify items by material type only, or by material type + custom model data
+# Items must use exact Minecraft material names (e.g., DRAGON_EGG, NETHERITE_SWORD)
+
+additional-blocked-items:
+  # Simple material-based blocking (blocks all items of this type)
+  items:
+    # Examples (all disabled by default):
+    # - DRAGON_EGG        # Prevent all dragon eggs from being stored
+    # - NETHERITE_SWORD   # Block all netherite swords
+    # - BEACON           # Block all beacon storage
+    # - NETHER_STAR      # Prevent all nether star storage
+  
+  # Custom model data blocking (blocks specific items with custom model data)
+  custom-model-data:
+    # Examples (all disabled by default):
+    # DIAMOND_SWORD:      # Block diamond swords with these custom model data values
+    #   - 12345
+    #   - 67890
+    # GOLDEN_APPLE:       # Block golden apples with this custom model data
+    #   - 99999
+    # 
+    # Format: MATERIAL_NAME: [list of custom model data numbers]
+    # This allows blocking specific textured/custom items while allowing normal ones
+
+
+# Warning messages (i made these look similar to worldguard messages)
+messages:
+  # Storage blocking messages (when trying to place special items in blocked inventories or item frames)
+  storage-blocking:
+    # Show message on first attempt, then every %frequency% attempts after
+    frequency: 5
+
+    text: "&c&lHey! &7You can't move a special item outside your inventory."
+  
+  # Pickup blocking messages (when trying to pick up special items at max limit)
+  pickup-blocking:
+    # Show message on first attempt, then every %frequency% attempts after
+    frequency: 100
+
+    text: "&c&lHey! &7You can't pick up that special item, you've reached your limit of special items in your inventory."
+
+
+debug: true
+
+config-version: 1
